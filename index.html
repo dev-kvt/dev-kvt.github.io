@@ -13,40 +13,42 @@
         
         body {
             font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #f2f2f2 0%, #e8e8e8 100%);
+            background: #323d43;
+            color: #d8caac;
             padding: 20px;
             line-height: 1.5;
-            color: #333;
+            min-height: 100vh;
         }
         
         .container {
             max-width: 780px;
             margin: 0 auto;
-            background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
-            border: 1px solid #d0d0d0;
+            background: #323d43;
+            border: 1px solid #868d80;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             overflow: hidden;
         }
         
         .header {
-            background: linear-gradient(to bottom, #e8e8e8 0%, #d8d8d8 100%);
+            background: #505a60;
             padding: 8px 20px;
-            border-bottom: 1px solid #c0c0c0;
+            border-bottom: 1px solid #868d80;
             font-size: 11px;
-            color: #666;
+            color: #868d80;
             text-align: right;
         }
         
         .content {
             padding: 30px;
+            background: #323d43;
         }
         
         .title {
             font-size: 28px;
             font-weight: normal;
             margin-bottom: 25px;
-            color: #2c5aa0;
+            color: #e68183;
             letter-spacing: 1px;
         }
         
@@ -56,7 +58,7 @@
             align-items: flex-start;
             margin-bottom: 35px;
             padding-bottom: 25px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #868d80;
         }
         
         .profile-info {
@@ -66,26 +68,26 @@
         .profile-info h2 {
             font-size: 20px;
             margin-bottom: 8px;
-            color: #333;
+            color: #e68183;
             font-weight: normal;
         }
         
         .profile-info p {
             font-size: 14px;
             margin-bottom: 6px;
-            color: #666;
+            color: #d8caac;
         }
         
         .profile-photo {
             width: 180px;
             height: 220px;
-            border: 1px solid #c0c0c0;
+            border: 1px solid #e68183;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            background: #505a60;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
         }
         
         .profile-image-tag {
@@ -102,7 +104,7 @@
         .section h2 {
             font-size: 16px;
             margin-bottom: 15px;
-            color: #2c5aa0;
+            color: #e68183;
             font-weight: normal;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -118,24 +120,26 @@
             font-size: 13px;
             padding-left: 12px;
             position: relative;
+            color: #d8caac;
         }
         
         .section li:before {
             content: "•";
             position: absolute;
             left: 0;
-            color: #2c5aa0;
+            color: #a3be8c;
         }
         
         .section a {
-            color: #2c5aa0;
+            color: #a3be8c;
             text-decoration: none;
-            border-bottom: 1px dotted #2c5aa0;
+            border-bottom: 1px dotted #a3be8c;
+            transition: all 0.2s ease;
         }
         
         .section a:hover {
-            color: #1a3d6b;
-            border-bottom: 1px solid #1a3d6b;
+            color: #a7c080;
+            border-bottom: 1px solid #a7c080;
         }
         
         .social-links {
@@ -150,29 +154,44 @@
             align-items: center;
             gap: 6px;
             padding: 4px 8px;
-            background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%);
-            border: 1px solid #c0c0c0;
+            background: #505a60;
+            border: 1px solid #868d80;
             border-radius: 2px;
             text-decoration: none;
-            color: #333;
+            color: #d8caac;
             font-size: 11px;
             transition: all 0.2s ease;
         }
         
         .social-links a:hover {
-            background: linear-gradient(to bottom, #e8e8e8 0%, #d8d8d8 100%);
-            border-color: #2c5aa0;
-            color: #2c5aa0;
+            background: #a7c080;
+            border-color: #a7c080;
+            color: #323d43;
         }
         
         .social-links a span {
             font-size: 10px;
-            color: #666;
+            color: #a3be8c;
         }
         
         .blog-link {
             font-size: 13px;
-            color: #333;
+            color: #d8caac;
+        }
+
+        /* Code-like styling for skills */
+        .section ul li {
+            background: #505a60;
+            padding: 6px 12px;
+            margin-bottom: 4px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            border-left: 3px solid #a3be8c;
+        }
+        
+        .section ul li:before {
+            display: none;
         }
 
         /* Responsive design */
@@ -205,6 +224,24 @@
             .social-links a {
                 justify-content: center;
             }
+        }
+
+        /* Subtle animations */
+        .container {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            transition: transform 0.2s ease;
+        }
+        
+        .section:hover {
+            transform: translateX(2px);
         }
     </style>
 </head>
@@ -240,7 +277,6 @@
                     <li>Machine Learning Algorithms & Techniques</li>
                     <li>Linear Algebra - Engineering Mathematics</li>
                     <li>MATLAB</li>
-                    
                 </ul>
             </div>
             
