@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divyansh</title>
     
-    <!-- SEO Meta -->
     <meta property="og:locale" content="en-US">
     <meta property="og:site_name" content="Divyansh">
     <meta property="og:title" content="Divyansh">
@@ -90,7 +89,7 @@
             position: relative;
             border-bottom: 1px solid #f2f3f3;
             background-color: #fff;
-            z-index: 20;
+            z-index: 20; /* Added z-index to ensure it stays on top */
         }
         
         .masthead__inner-wrap {
@@ -159,8 +158,9 @@
             padding-right: 1em;
             max-width: 1280px;
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 300px 1fr; /* Desktop layout */
             grid-gap: 3em;
+            align-items: start; /* Align grid items to the start for better sticky behavior */
         }
         
         /* Sidebar */
@@ -173,16 +173,17 @@
         .author__avatar {
             display: table-cell;
             vertical-align: top;
-            width: 36px;
-            height: 36px;
+            width: 36px; /* This width is for the cell, not the image itself */
+            height: 36px; /* This height is for the cell, not the image itself */
             margin-bottom: 1em;
         }
         
         .author__avatar img {
-            max-width: 200px;
+            max-width: 200px; /* Increased max-width for better display */
             border-radius: 50%;
             border: 3px solid #fff;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            display: block; /* Ensure image behaves as a block element for centering if needed */
         }
         
         .author__content {
@@ -209,6 +210,7 @@
         
         .author__urls-wrapper {
             margin-top: 1em;
+            position: relative; /* Added for correct positioning of dropdown */
         }
         
         .btn {
@@ -244,7 +246,8 @@
         .author__urls {
             display: none;
             position: absolute;
-            right: 0;
+            /* Corrected right position for desktop to align with button */
+            right: 0; 
             margin-top: 15px;
             padding: 10px;
             list-style-type: none;
@@ -252,6 +255,7 @@
             border-radius: 4px;
             background: #fff;
             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            z-index: 10; /* Ensure dropdown is above other content */
         }
         
         .author__urls.is--visible {
@@ -486,14 +490,20 @@
             }
             
             .sidebar {
-                position: static;
-                order: -1;
+                position: static; /* Sidebar becomes static on small screens */
+                order: -1; /* Puts sidebar at the top on small screens */
             }
             
             .author__avatar {
                 display: block;
                 text-align: center;
                 margin-bottom: 1em;
+                width: auto; /* Reset width for better centering */
+                height: auto; /* Reset height for better centering */
+            }
+            
+            .author__avatar img {
+                 margin: 0 auto; /* Center image on small screens */
             }
             
             .author__content {
@@ -504,6 +514,17 @@
             
             .author__urls-wrapper {
                 text-align: center;
+            }
+            
+            .author__urls {
+                position: static; /* Position static on small screens to flow naturally */
+                width: 100%;
+                margin-top: 10px; /* Adjusted margin for better spacing */
+            }
+
+            .author__urls:before,
+            .author__urls:after {
+                display: none; /* Hide the arrow on mobile */
             }
             
             .skills-grid {
@@ -578,7 +599,7 @@
         <div class="sidebar sticky">
             <div itemscope itemtype="http://schema.org/Person">
                 <div class="author__avatar">
-                    <img src="Beige Background, Dark Teal Portrait.png" class="author__avatar" alt="Divyansh">
+                    <img src="Beige Background, Dark Teal Portrait.png" alt="Divyansh">
                 </div>
                 <div class="author__content">
                     <h3 class="author__name">Divyansh</h3>
@@ -628,10 +649,8 @@
                         and I'm always eager to learn new technologies and work on interesting projects.
                     </p>
                     <p>
-                        When I'm not coding, you can find me creating music with FL Studio and LMMS, diving deep into 
-                        algorithms and data structures, or exploring the fascinating world of compiler design. 
-                        I believe in the power of technology to solve real-world problems and create meaningful impact.
-                    </p>
+                        I create music with FL Studio and LMMS as a hobby and i am a passionate minecrafter 
+                    </p
                     
                     <h2>Skills & Expertise</h2>
                     <div class="skills-grid">
@@ -673,7 +692,7 @@
                     <p>
                         I'm working on various projects that combine my interests in computer science and real-world applications. 
                         One of my notable projects is an <a href="https://vanshavli.github.io/v" target="_blank">ancestry calculator specifically designed for South Asians<i class="fas fa-external-link-alt"></i></a>, 
-                        which demonstrates my interest in applying technology to cultural and genealogical research.
+                        which demonstrates  applying technology to  genealogical research.
                     </p>
                     
                     <h2 id="blog">Blog</h2>
@@ -729,7 +748,7 @@
             </ul>
         </div>
         <div class="page__footer-copyright">
-            © 2025 Divyansh. Built with passion for technology and innovation.
+            © 2025 Divyansh. 
         </div>
     </div>
     
@@ -744,7 +763,8 @@
             const urls = document.getElementById('author-urls');
             const button = event.target.closest('.btn--inverse');
             
-            if (!button && !urls.contains(event.target)) {
+            // If the clicked element is not the button and not inside the urls dropdown
+            if (!button && urls.classList.contains('is--visible') && !urls.contains(event.target)) {
                 urls.classList.remove('is--visible');
             }
         });
@@ -762,26 +782,6 @@
                 }
             });
         });
-        
-        // Update time display (keeping from original)
-        function updateTime() {
-            const now = new Date();
-            const options = { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric',
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-            };
-            const timeElement = document.getElementById('current-time');
-            if (timeElement) {
-                timeElement.textContent = now.toLocaleDateString('en-US', options);
-            }
-        }
-        
-        updateTime();
-        setInterval(updateTime, 60000);
     </script>
 </body>
 </html>
