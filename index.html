@@ -17,6 +17,54 @@
     </script>
     
     <style>
+        /* Font Awesome fonts */
+        @font-face {
+            font-family: 'Font Awesome 6 Brands';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* Font Awesome base styles */
+        .fa, .fas, .fab {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            display: inline-block;
+        }
+        
+        .fab {
+            font-family: 'Font Awesome 6 Brands';
+            font-weight: 400;
+        }
+        
+        /* Font Awesome icon definitions */
+        .fa-envelope:before { content: "\f0e0"; }
+        .fa-twitter:before { content: "\f099"; }
+        .fa-linkedin:before { content: "\f08c"; }
+        .fa-github:before { content: "\f09b"; }
+        .fa-instagram:before { content: "\f16d"; }
+        .fa-rss:before { content: "\f09e"; }
+        .fa-external-link-alt:before { content: "\f35d"; }
+        .fa-code:before { content: "\f121"; }
+        .fa-music:before { content: "\f001"; }
+        .fa-cogs:before { content: "\f085"; }
+        .fa-brain:before { content: "\f5dc"; }
+        .fa-laptop-code:before { content: "\f5fc"; }
+        .fa-calculator:before { content: "\f1ec"; }
+        
         /* Reset and base styles */
         *, *:before, *:after {
             box-sizing: border-box;
@@ -248,6 +296,12 @@
             color: #000;
         }
         
+        .author__urls a i {
+            margin-right: 0.5em;
+            width: 1.2em;
+            text-align: center;
+        }
+        
         /* Skills styling */
         .skills-grid {
             display: grid;
@@ -264,12 +318,20 @@
             font-size: 0.875em;
             border-left: 3px solid #007cba;
             transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
         }
         
         .skill-item:hover {
             background: #e9ecef;
             transform: translateY(-1px);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .skill-item i {
+            color: #007cba;
+            font-size: 1.1em;
         }
         
         /* Main content */
@@ -329,6 +391,11 @@
             text-decoration: underline;
         }
         
+        .page__content a i {
+            margin-left: 0.3em;
+            font-size: 0.8em;
+        }
+        
         /* Social links */
         .social-links {
             display: flex;
@@ -358,6 +425,10 @@
             transform: translateY(-1px);
         }
         
+        .social-links a i {
+            font-size: 1.1em;
+        }
+        
         /* Footer */
         .page__footer {
             margin-top: 3em;
@@ -385,10 +456,17 @@
             color: #494e52;
             text-decoration: none;
             transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
         }
         
         .page__footer-follow a:hover {
             color: #007cba;
+        }
+        
+        .page__footer-follow a i {
+            font-size: 1.1em;
         }
         
         .page__footer-copyright {
@@ -511,27 +589,27 @@
                     <ul class="author__urls social-icons" id="author-urls">
                         <li>
                             <a href="mailto:your.email@example.com">
-                                <span>✉</span> Email
+                                <i class="fas fa-envelope"></i> Email
                             </a>
                         </li>
                         <li>
                             <a href="https://twitter.com/devkvt2" target="_blank">
-                                <span>🐦</span> Twitter
+                                <i class="fab fa-twitter"></i> Twitter
                             </a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/devkvt/" target="_blank">
-                                <span>💼</span> LinkedIn
+                                <i class="fab fa-linkedin"></i> LinkedIn
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/devkvt23" target="_blank">
-                                <span>🐙</span> GitHub
+                                <i class="fab fa-github"></i> GitHub
                             </a>
                         </li>
                         <li>
                             <a href="https://instagram.com/devkvt" target="_blank">
-                                <span>📸</span> Instagram
+                                <i class="fab fa-instagram"></i> Instagram
                             </a>
                         </li>
                     </ul>
@@ -550,33 +628,58 @@
                         and I'm always eager to learn new technologies and work on interesting projects.
                     </p>
                     <p>
-                        When I'm not coding, you can find me creating music with FL Studio and LMMS , i happen to be
-                        a passionate minecrafter aswell , and a die hard vergil fan.
+                        When I'm not coding, you can find me creating music with FL Studio and LMMS, diving deep into 
+                        algorithms and data structures, or exploring the fascinating world of compiler design. 
+                        I believe in the power of technology to solve real-world problems and create meaningful impact.
                     </p>
                     
                     <h2>Skills & Expertise</h2>
                     <div class="skills-grid">
-                        <div class="skill-item">Web Development</div>
-                        <div class="skill-item">FL Studios, LMMS</div>
-                        <div class="skill-item">Compiler Design</div>
-                        <div class="skill-item">Algorithms & Data Structures</div>
-                        <div class="skill-item">Computer Science Fundamentals</div>
-                        <div class="skill-item">Machine Learning Algorithms</div>
-                        <div class="skill-item">Linear Algebra & Engineering Math</div>
-                        <div class="skill-item">MATLAB</div>
+                        <div class="skill-item">
+                            <i class="fas fa-laptop-code"></i>
+                            Web Development
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-music"></i>
+                            FL Studios, LMMS
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cogs"></i>
+                            Compiler Design
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            Algorithms & Data Structures
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            Computer Science Fundamentals
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            Machine Learning Algorithms
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-calculator"></i>
+                            Linear Algebra & Engineering Math
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-calculator"></i>
+                            MATLAB
+                        </div>
                     </div>
                     
                     <h2 id="projects">Projects</h2>
                     <p>
                         I'm working on various projects that combine my interests in computer science and real-world applications. 
-                        One of my notable projects is an <a href="https://vanshavli.github.io/v">ancestry calculator specifically designed for South Asians</a>, 
-                        which demonstratesv applying technology to cultural and genealogical research.
+                        One of my notable projects is an <a href="https://vanshavli.github.io/v" target="_blank">ancestry calculator specifically designed for South Asians<i class="fas fa-external-link-alt"></i></a>, 
+                        which demonstrates my interest in applying technology to cultural and genealogical research.
                     </p>
                     
                     <h2 id="blog">Blog</h2>
                     <p>
                         I occasionally write about my experiences in computer science, technology insights, and project learnings. 
-                        You can <a href="https://devkvt23.github.io/b/">read my blog here</a> to follow my journey and thoughts on various tech topics.
+                        You can <a href="https://devkvt23.github.io/b/" target="_blank">read my blog here<i class="fas fa-external-link-alt"></i></a> to follow my journey and thoughts on various tech topics.
                     </p>
                     
                     <h2 id="contact">Connect</h2>
@@ -587,16 +690,16 @@
                     
                     <div class="social-links">
                         <a href="https://github.com/devkvt23" target="_blank">
-                            <span>🐙</span> GitHub
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://twitter.com/devkvt2" target="_blank">
-                            <span>🐦</span> Twitter
+                            <i class="fab fa-twitter"></i> Twitter
                         </a>
                         <a href="https://www.linkedin.com/in/devkvt/" target="_blank">
-                            <span>💼</span> LinkedIn
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                         <a href="https://instagram.com/devkvt" target="_blank">
-                            <span>📸</span> Instagram
+                            <i class="fab fa-instagram"></i> Instagram
                         </a>
                     </div>
                 </section>
@@ -610,17 +713,17 @@
                 <li><strong>Follow:</strong></li>
                 <li>
                     <a href="https://twitter.com/devkvt2">
-                        <span>🐦</span> Twitter
+                        <i class="fab fa-twitter"></i> Twitter
                     </a>
                 </li>
                 <li>
                     <a href="https://github.com/devkvt23">
-                        <span>🐙</span> GitHub
+                        <i class="fab fa-github"></i> GitHub
                     </a>
                 </li>
                 <li>
                     <a href="https://devkvt23.github.io/b/">
-                        <span>📝</span> Blog
+                        <i class="fas fa-rss"></i> Blog
                     </a>
                 </li>
             </ul>
