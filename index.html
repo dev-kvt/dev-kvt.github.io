@@ -1,319 +1,666 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divyansh</title>
+    
+    <!-- SEO Meta -->
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="Divyansh">
+    <meta property="og:title" content="Divyansh">
+    <meta property="og:description" content="Pre-Final Year Computer Science Student">
+    <meta name="description" content="Pre-Final Year Computer Science Student">
+    
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+        /* Reset and base styles */
+        *, *:before, *:after {
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-            background: #323d43;
-            color: #d8caac;
-            padding: 20px;
-            line-height: 1.5;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            background: #323d43;
-            border: 1px solid #868d80;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: #505a60;
-            padding: 8px 20px;
-            border-bottom: 1px solid #868d80;
-            font-size: 11px;
-            color: #868d80;
-            text-align: right;
-        }
-        
-        .content {
-            padding: 30px;
-            background: #323d43;
-        }
-        
-        .title {
-            font-size: 28px;
-            font-weight: normal;
-            margin-bottom: 25px;
-            color: #e68183;
-            letter-spacing: 1px;
-        }
-        
-        .profile-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #868d80;
-        }
-        
-        .profile-info {
-            flex: 1;
-        }
-        
-        .profile-info h2 {
-            font-size: 20px;
-            margin-bottom: 8px;
-            color: #e68183;
-            font-weight: normal;
-        }
-        
-        .profile-info p {
-            font-size: 14px;
-            margin-bottom: 6px;
-            color: #d8caac;
-        }
-        
-        .profile-photo {
-            width: 180px;
-            height: 220px;
-            border: 1px solid #e68183;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #505a60;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        .profile-image-tag {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section h2 {
+        html {
             font-size: 16px;
-            margin-bottom: 15px;
-            color: #e68183;
-            font-weight: normal;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
         
-        .section ul {
-            list-style: none;
-            margin-left: 0;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+            line-height: 1.6;
+            color: #494e52;
+            background-color: #fff;
         }
         
-        .section li {
-            margin-bottom: 6px;
-            font-size: 13px;
-            padding-left: 12px;
+        /* Header/Navigation */
+        .masthead {
             position: relative;
-            color: #d8caac;
+            border-bottom: 1px solid #f2f3f3;
+            background-color: #fff;
+            z-index: 20;
         }
         
-        .section li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #a3be8c;
+        .masthead__inner-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1em;
         }
         
-        .section a {
-            color: #a3be8c;
+        .masthead__menu {
+            float: right;
+            margin-left: 1em;
+            width: 100%;
+        }
+        
+        .greedy-nav {
+            position: relative;
+            min-height: 3em;
+            background: #fff;
+        }
+        
+        .greedy-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        .greedy-nav .visible-links {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+        
+        .greedy-nav .visible-links li {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        .greedy-nav .visible-links li:first-child {
+            font-weight: bold;
+        }
+        
+        .greedy-nav .visible-links a {
+            display: block;
+            margin: 0 1rem;
+            padding: 0.5rem 0;
+            color: #494e52;
             text-decoration: none;
-            border-bottom: 1px dotted #a3be8c;
-            transition: all 0.2s ease;
+            transition: color 0.2s;
         }
         
-        .section a:hover {
-            color: #a7c080;
-            border-bottom: 1px solid #a7c080;
+        .greedy-nav .visible-links a:hover {
+            color: #000;
         }
         
+        .masthead__menu-item--lg a {
+            font-size: 1.25rem;
+        }
+        
+        /* Main Layout */
+        #main {
+            margin-top: 1em;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1em;
+            padding-right: 1em;
+            max-width: 1280px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            grid-gap: 3em;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 2em;
+            height: fit-content;
+        }
+        
+        .author__avatar {
+            display: table-cell;
+            vertical-align: top;
+            width: 36px;
+            height: 36px;
+            margin-bottom: 1em;
+        }
+        
+        .author__avatar img {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .author__content {
+            display: table-cell;
+            vertical-align: top;
+            padding-left: 15px;
+            padding-right: 25px;
+            line-height: 1;
+        }
+        
+        .author__name {
+            margin: 0;
+            font-size: 1.563em;
+            color: #494e52;
+            font-weight: 600;
+        }
+        
+        .author__bio {
+            margin: 0;
+            font-size: 0.875em;
+            color: #7a8288;
+            font-style: italic;
+        }
+        
+        .author__urls-wrapper {
+            margin-top: 1em;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-bottom: 0.25em;
+            padding: 0.5em 1em;
+            font-size: 0.75em;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #494e52;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: #000;
+        }
+        
+        .btn--inverse {
+            color: #494e52;
+            background-color: #fff;
+            border: 1px solid #494e52;
+        }
+        
+        .btn--inverse:hover {
+            color: #fff;
+            background-color: #494e52;
+        }
+        
+        .author__urls {
+            display: none;
+            position: absolute;
+            right: 0;
+            margin-top: 15px;
+            padding: 10px;
+            list-style-type: none;
+            border: 1px solid #f2f3f3;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+        
+        .author__urls.is--visible {
+            display: block;
+        }
+        
+        .author__urls:before {
+            content: "";
+            position: absolute;
+            top: -11px;
+            right: 10px;
+            width: 0;
+            border-style: solid;
+            border-width: 0 10px 10px;
+            border-color: #f2f3f3 transparent;
+        }
+        
+        .author__urls:after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            width: 0;
+            border-style: solid;
+            border-width: 0 10px 10px;
+            border-color: #fff transparent;
+        }
+        
+        .author__urls li {
+            white-space: nowrap;
+            margin-bottom: 0.5em;
+        }
+        
+        .author__urls a {
+            display: block;
+            color: #494e52;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .author__urls a:hover {
+            color: #000;
+        }
+        
+        /* Skills styling */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5em;
+            margin: 1em 0;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 0.75em 1em;
+            border-radius: 4px;
+            font-family: Monaco, Consolas, "Lucida Console", monospace;
+            font-size: 0.875em;
+            border-left: 3px solid #007cba;
+            transition: all 0.2s;
+        }
+        
+        .skill-item:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Main content */
+        .page {
+            width: 100%;
+        }
+        
+        .page__inner-wrap {
+            width: 100%;
+        }
+        
+        .page__content {
+            margin-bottom: 3em;
+        }
+        
+        .page__content h1 {
+            margin-top: 0;
+            font-size: 1.563em;
+            color: #494e52;
+        }
+        
+        .page__content h2 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+            font-size: 1.25em;
+            color: #494e52;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid #f2f3f3;
+        }
+        
+        .page__content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .page__content p {
+            margin-bottom: 1.3em;
+            text-align: justify;
+        }
+        
+        .page__content ul {
+            margin-bottom: 1.3em;
+            padding-left: 1.5em;
+        }
+        
+        .page__content li {
+            margin-bottom: 0.5em;
+        }
+        
+        .page__content a {
+            color: #007cba;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .page__content a:hover {
+            color: #004d7a;
+            text-decoration: underline;
+        }
+        
+        /* Social links */
         .social-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
+            gap: 0.5em;
+            margin-top: 1em;
         }
         
         .social-links a {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 4px 8px;
-            background: #505a60;
-            border: 1px solid #868d80;
-            border-radius: 2px;
+            gap: 0.5em;
+            padding: 0.5em 1em;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            color: #494e52;
             text-decoration: none;
-            color: #d8caac;
-            font-size: 11px;
-            transition: all 0.2s ease;
+            font-size: 0.875em;
+            transition: all 0.2s;
         }
         
         .social-links a:hover {
-            background: #a7c080;
-            border-color: #a7c080;
-            color: #323d43;
+            background: #007cba;
+            border-color: #007cba;
+            color: #fff;
+            transform: translateY(-1px);
         }
         
-        .social-links a span {
-            font-size: 10px;
-            color: #a3be8c;
+        /* Footer */
+        .page__footer {
+            margin-top: 3em;
+            padding: 2em 0;
+            border-top: 1px solid #f2f3f3;
+            background: #f8f9fa;
         }
         
-        .blog-link {
-            font-size: 13px;
-            color: #d8caac;
-        }
-
-        /* Code-like styling for skills */
-        .section ul li {
-            background: #505a60;
-            padding: 6px 12px;
-            margin-bottom: 4px;
-            border-radius: 2px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            border-left: 3px solid #a3be8c;
+        .page__footer-follow {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1em;
         }
         
-        .section ul li:before {
-            display: none;
+        .page__footer-follow ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
-
+        
+        .page__footer-follow a {
+            color: #494e52;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .page__footer-follow a:hover {
+            color: #007cba;
+        }
+        
+        .page__footer-copyright {
+            max-width: 1280px;
+            margin: 1em auto 0;
+            padding: 0 1em;
+            font-size: 0.875em;
+            color: #7a8288;
+        }
+        
         /* Responsive design */
-        @media (max-width: 600px) {
-            .container {
-                margin: 10px;
-                border-radius: 2px;
+        @media (max-width: 768px) {
+            #main {
+                grid-template-columns: 1fr;
+                grid-gap: 2em;
+                margin-top: 0;
             }
             
-            .content {
-                padding: 20px;
+            .sidebar {
+                position: static;
+                order: -1;
             }
             
-            .profile-section {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
+            .author__avatar {
+                display: block;
+                text-align: center;
+                margin-bottom: 1em;
             }
             
-            .profile-photo {
-                width: 150px;
-                height: 180px;
+            .author__content {
+                display: block;
+                text-align: center;
+                padding: 0;
+            }
+            
+            .author__urls-wrapper {
+                text-align: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
             
             .social-links {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .social-links a {
                 justify-content: center;
             }
+            
+            .greedy-nav .visible-links {
+                display: block;
+            }
+            
+            .greedy-nav .visible-links li {
+                display: block;
+                text-align: center;
+            }
         }
-
-        /* Subtle animations */
-        .container {
+        
+        /* Animations */
+        .page {
             animation: fadeIn 0.5s ease-in-out;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .section {
-            transition: transform 0.2s ease;
+        /* JavaScript toggle functionality */
+        .js .author__urls {
+            display: none;
         }
         
-        .section:hover {
-            transform: translateX(2px);
+        .author__urls button {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <span id="current-time"></span>
-        </div>
-        
-        <div class="content">
-            <h1 class="title">About</h1>
-            
-            <div class="profile-section">
-                <div class="profile-info">
-                    <h2>Divyansh</h2>
-                    <p>Pre-Final Year Computer Science Student</p>
-                </div>
-                <div class="profile-photo">
-                    <img src="Beige Background, Dark Teal Portrait.png" 
-                         alt="Divyansh Singh" 
-                         class="profile-image-tag">
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Web Development</li>
-                    <li>FL Studios, LMMS</li>
-                    <li>Compiler Design</li>
-                    <li>Algorithms & Data-Structures</li>
-                    <li>Computer-Science Fundamentals</li>
-                    <li>Machine Learning Algorithms & Techniques</li>
-                    <li>Linear Algebra - Engineering Mathematics</li>
-                    <li>MATLAB</li>
-                </ul>
-            </div>
-            
-            <div class="section">
-                <h2>Projects</h2>
-                <ul>
-                    <li><a href="https://vanshavli.github.io/v">Ancestry calculator for South Asians</a></li>
-                </ul>
-            </div>
-            
-            <div class="section">
-                <h2>Blog</h2>
-                <p class="blog-link"><a href="https://devkvt23.github.io/b/">Read here.</a></p>
-            </div>
-
-            <div class="section">
-                <h2>Socials</h2>
-                <div class="social-links">
-                    <a href="https://github.com/devkvt23" target="_blank">
-                        <span>●</span> github
-                    </a>
-                    <a href="https://twitter.com/devkvt2" target="_blank">
-                        <span>●</span> twitter
-                    </a>
-                    <a href="https://www.linkedin.com/in/devkvt/" target="_blank">
-                        <span>●</span> linkedin
-                    </a>
-                    <a href="https://instagram.com/devkvt" target="_blank">
-                        <span>●</span> instagram
-                    </a>
-                </div>
+    <div class="masthead">
+        <div class="masthead__inner-wrap">
+            <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    <ul class="visible-links">
+                        <li class="masthead__menu-item masthead__menu-item--lg">
+                            <a href="#about">Divyansh</a>
+                        </li>
+                        <li class="masthead__menu-item">
+                            <a href="#projects">Projects</a>
+                        </li>
+                        <li class="masthead__menu-item">
+                            <a href="#blog">Blog</a>
+                        </li>
+                        <li class="masthead__menu-item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
     
+    <div id="main" role="main">
+        <div class="sidebar sticky">
+            <div itemscope itemtype="http://schema.org/Person">
+                <div class="author__avatar">
+                    <img src="Beige Background, Dark Teal Portrait.png" class="author__avatar" alt="Divyansh">
+                </div>
+                <div class="author__content">
+                    <h3 class="author__name">Divyansh</h3>
+                    <p class="author__bio">Pre-Final Year Computer Science Student</p>
+                </div>
+                <div class="author__urls-wrapper">
+                    <button class="btn btn--inverse" onclick="toggleUrls()">Connect</button>
+                    <ul class="author__urls social-icons" id="author-urls">
+                        <li>
+                            <a href="mailto:your.email@example.com">
+                                <span>✉</span> Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/devkvt2" target="_blank">
+                                <span>🐦</span> Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/devkvt/" target="_blank">
+                                <span>💼</span> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/devkvt23" target="_blank">
+                                <span>🐙</span> GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/devkvt" target="_blank">
+                                <span>📸</span> Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+            <div class="page__inner-wrap">
+                <section class="page__content" itemprop="text">
+                    <h1 id="about">About</h1>
+                    <p>Hello!</p>
+                    <p>
+                        I'm a pre-final year Computer Science student with a passion for technology and innovation. 
+                        I enjoy exploring various aspects of computer science, from web development to machine learning, 
+                        and I'm always eager to learn new technologies and work on interesting projects.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me creating music with FL Studio and LMMS , i happen to be
+                        a passionate minecrafter aswell , and a die hard vergil fan.
+                    </p>
+                    
+                    <h2>Skills & Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">Web Development</div>
+                        <div class="skill-item">FL Studios, LMMS</div>
+                        <div class="skill-item">Compiler Design</div>
+                        <div class="skill-item">Algorithms & Data Structures</div>
+                        <div class="skill-item">Computer Science Fundamentals</div>
+                        <div class="skill-item">Machine Learning Algorithms</div>
+                        <div class="skill-item">Linear Algebra & Engineering Math</div>
+                        <div class="skill-item">MATLAB</div>
+                    </div>
+                    
+                    <h2 id="projects">Projects</h2>
+                    <p>
+                        I'm working on various projects that combine my interests in computer science and real-world applications. 
+                        One of my notable projects is an <a href="https://vanshavli.github.io/v">ancestry calculator specifically designed for South Asians</a>, 
+                        which demonstratesv applying technology to cultural and genealogical research.
+                    </p>
+                    
+                    <h2 id="blog">Blog</h2>
+                    <p>
+                        I occasionally write about my experiences in computer science, technology insights, and project learnings. 
+                        You can <a href="https://devkvt23.github.io/b/">read my blog here</a> to follow my journey and thoughts on various tech topics.
+                    </p>
+                    
+                    <h2 id="contact">Connect</h2>
+                    <p>
+                        I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology and innovation. 
+                        Feel free to reach out through any of the social platforms listed in the sidebar.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/devkvt23" target="_blank">
+                            <span>🐙</span> GitHub
+                        </a>
+                        <a href="https://twitter.com/devkvt2" target="_blank">
+                            <span>🐦</span> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/in/devkvt/" target="_blank">
+                            <span>💼</span> LinkedIn
+                        </a>
+                        <a href="https://instagram.com/devkvt" target="_blank">
+                            <span>📸</span> Instagram
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </div>
+    
+    <div class="page__footer">
+        <div class="page__footer-follow">
+            <ul class="social-icons">
+                <li><strong>Follow:</strong></li>
+                <li>
+                    <a href="https://twitter.com/devkvt2">
+                        <span>🐦</span> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/devkvt23">
+                        <span>🐙</span> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://devkvt23.github.io/b/">
+                        <span>📝</span> Blog
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="page__footer-copyright">
+            © 2025 Divyansh. Built with passion for technology and innovation.
+        </div>
+    </div>
+    
     <script>
-        // Automatic time display
+        function toggleUrls() {
+            const urls = document.getElementById('author-urls');
+            urls.classList.toggle('is--visible');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const urls = document.getElementById('author-urls');
+            const button = event.target.closest('.btn--inverse');
+            
+            if (!button && !urls.contains(event.target)) {
+                urls.classList.remove('is--visible');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update time display (keeping from original)
         function updateTime() {
             const now = new Date();
             const options = { 
@@ -324,10 +671,12 @@
                 minute: '2-digit',
                 hour12: true
             };
-            document.getElementById('current-time').textContent = now.toLocaleDateString('en-US', options);
+            const timeElement = document.getElementById('current-time');
+            if (timeElement) {
+                timeElement.textContent = now.toLocaleDateString('en-US', options);
+            }
         }
         
-        // Update time immediately and then every minute
         updateTime();
         setInterval(updateTime, 60000);
     </script>
