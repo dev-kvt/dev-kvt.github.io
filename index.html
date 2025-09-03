@@ -1,806 +1,172 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divyansh</title>
-        <link rel="icon" href="cpu(1).png" type="image/png">
-    <meta property="og:locale" content="en-US">
-    <meta property="og:site_name" content="Divyansh">
-    <meta property="og:title" content="Divyansh">
-    <meta property="og:description" content="Yo">
-    <meta name="description" content=" Student">
-    
-    <script>
-        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-    </script>
-    
+    <link rel="icon" href="cpu(1).png" type="image/png">
     <style>
-        /* Font Awesome fonts */
-        @font-face {
-            font-family: 'Font Awesome 6 Brands';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        @font-face {
-            font-family: 'Font Awesome 6 Free';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        /* Font Awesome base styles */
-        .fa, .fas, .fab {
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            line-height: 1;
-            display: inline-block;
-        }
-        
-        .fab {
-            font-family: 'Font Awesome 6 Brands';
-            font-weight: 400;
-        }
-        
-        /* Font Awesome icon definitions */
-        .fa-envelope:before { content: "\f0e0"; }
-        .fa-twitter:before { content: "\f099"; }
-        .fa-linkedin:before { content: "\f08c"; }
-        .fa-github:before { content: "\f09b"; }
-        .fa-instagram:before { content: "\f16d"; }
-        .fa-rss:before { content: "\f09e"; }
-        .fa-external-link-alt:before { content: "\f35d"; }
-        .fa-code:before { content: "\f121"; }
-        .fa-music:before { content: "\f001"; }
-        .fa-cogs:before { content: "\f085"; }
-        .fa-brain:before { content: "\f5dc"; }
-        .fa-laptop-code:before { content: "\f5fc"; }
-        .fa-calculator:before { content: "\f1ec"; }
-        .fa-mastodon:before { content: "\f4f6"; }
-        .fa-soundcloud:before { content: "\f1be"; }
-
-        /* Reset and base styles */
-        *, *:before, *:after {
-            box-sizing: border-box;
-        }
-        
-        html {
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-        }
-        
         body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #494e52;
-            background-color: #fff;
-        }
-        
-        /* Header/Navigation */
-        .masthead {
-            position: relative;
-            border-bottom: 1px solid #f2f3f3;
-            background-color: #fff;
-            z-index: 20;
-        }
-        
-        .masthead__inner-wrap {
-            max-width: 960px; /* Adjusted to match reference more closely */
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 1em;
-            height: 3.5em; /* Fixed height for navigation */
-            display: flex;
-            align-items: center; /* Vertically align items */
-        }
-        
-        .masthead__menu {
-            margin-left: auto; /* Push menu to the right */
-        }
-        
-        .greedy-nav {
-            background: #fff;
-        }
-        
-        .greedy-nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex; /* Use flexbox for horizontal menu */
-            align-items: center;
-        }
-        
-        .greedy-nav .visible-links li {
-            display: list-item; /* Reset to default li display */
-            margin-left: 1.5em; /* Spacing between links */
-        }
-        
-        .greedy-nav .visible-links li:first-child {
-            margin-left: 0; /* No left margin for the first item */
-            font-weight: bold;
-        }
-        
-        .greedy-nav .visible-links a {
-            display: block;
-            padding: 0.5rem 0;
-            color: #494e52;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-size: 0.9em; /* Slightly smaller font for links */
-        }
-        
-        .greedy-nav .visible-links a:hover {
-            color: #000;
-        }
-        
-        .masthead__menu-item--lg a {
-            font-size: 1.25em; /* Font size for the name */
-            font-weight: 600; /* Bolder for the name */
-        }
-        
-        /* Main Layout */
-        #main {
-            margin-top: 2em; /* Increased top margin */
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1em;
-            padding-right: 1em;
-            max-width: 960px; /* Adjusted to match reference more closely */
-            display: grid;
-            grid-template-columns: 280px 1fr; /* Adjusted sidebar width */
-            grid-gap: 3.5em; /* Adjusted gap */
-            align-items: start;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 2em;
-            height: fit-content;
-            padding-right: 1.5em; /* Added padding to the right for spacing */
-        }
-        
-        .author__avatar {
-            margin-bottom: 1.5em;
-            text-align: center; /* Center the image */
-        }
-        
-        .author__avatar img {
-            width: 150px; /* Increased from 100px to 150px for modern look */
-            height: 150px; /* Keep height same as width for perfect circle */
-            border-radius: 50%;
-            border: 4px solid #fff; /* Slightly thicker border */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow for modern depth */
-            display: block;
-            margin: 0 auto; /* Center the image */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
-        }
-        
-        .author__avatar img:hover {
-            transform: scale(1.05); /* Subtle scale on hover */
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
-        }
-        
-        .author__content {
-            text-align: center; /* Center text in sidebar */
-            padding-left: 0;
-            padding-right: 0;
-            line-height: 1.2; /* Adjusted line height */
-        }
-        
-        .author__name {
-            margin: 0;
-            font-size: 1.4em; /* Adjusted font size */
-            color: #494e52;
-            font-weight: 600;
-        }
-        
-        .author__bio {
-            margin: 0.5em 0 0; /* Adjusted margin */
-            font-size: 0.8em; /* Adjusted font size */
-            color: #7a8288;
-            font-style: italic;
-        }
-        
-        .author__urls-wrapper {
-            margin-top: 1.5em; /* Increased top margin */
-            position: relative;
-            text-align: center; /* Center the button */
-        }
-        
-        .btn {
-            display: inline-block;
-            margin-bottom: 0.25em;
-            padding: 0.5em 1em;
-            font-size: 0.75em;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            background-color: #494e52;
-            border: 0;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .btn:hover {
-            background-color: #000;
-        }
-        
-        .btn--inverse {
-            color: #494e52;
+            padding: 40px 20px;
+            color: #333;
             background-color: #fff;
-            border: 1px solid #494e52;
         }
         
-        .btn--inverse:hover {
-            color: #fff;
-            background-color: #494e52;
-        }
-        
-        .author__urls {
-            display: none; /* Hidden by default */
-            position: absolute;
-            right: 0;
-            left: 0; /* Centered with left and right 0 */
-            margin: 0 auto; /* Further centering */
-            width: fit-content; /* Fit content width */
-            margin-top: 15px;
-            padding: 10px;
-            list-style-type: none;
-            border: 1px solid #f2f3f3;
-            border-radius: 4px;
-            background: #fff;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-            z-index: 10;
-        }
-        
-        .author__urls.is--visible {
-            display: block;
-        }
-        
-        .author__urls:before {
-            content: "";
-            position: absolute;
-            top: -11px;
-            right: 10px; /* Aligned with button on right */
-            width: 0;
-            border-style: solid;
-            border-width: 0 10px 10px;
-            border-color: #f2f3f3 transparent;
-        }
-        
-        .author__urls:after {
-            content: "";
-            position: absolute;
-            top: -10px;
-            right: 10px; /* Aligned with button on right */
-            width: 0;
-            border-style: solid;
-            border-width: 0 10px 10px;
-            border-color: #fff transparent;
-        }
-        
-        .author__urls li {
-            white-space: nowrap;
-            margin-bottom: 0.5em;
-            text-align: left; /* Align links to the left within dropdown */
-        }
-        
-        .author__urls li:last-child {
-            margin-bottom: 0;
-        }
-        
-        .author__urls a {
-            display: block;
-            color: #494e52;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .author__urls a:hover {
-            color: #000;
-        }
-        
-        .author__urls a i {
-            margin-right: 0.5em;
-            width: 1.2em;
+        header {
             text-align: center;
-            font-size: 0.9em; /* Slightly smaller icon size */
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
         
-        /* Skills styling */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted minmax for skills */
-            gap: 0.5em;
-            margin: 1em 0;
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
         }
         
-        .skill-item {
-            background: #fdfdfd; /* Lighter background */
-            padding: 0.6em 0.8em; /* Adjusted padding */
-            border-radius: 3px; /* Slightly smaller border-radius */
-            font-family: Monaco, Consolas, "Lucida Console", monospace;
-            font-size: 0.825em; /* Adjusted font size */
-            border: 1px solid #eee; /* Light border */
-            transition: all 0.2s;
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 300;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .project {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 3px solid #007cba;
+        }
+        
+        .project h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .project p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 5px 12px;
+            background: #007cba;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        .project-links a:hover {
+            background: #005a8b;
+        }
+        
+        .contact-links {
             display: flex;
-            align-items: center;
-            gap: 0.5em;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
         }
         
-        .skill-item:hover {
-            background: #f2f3f3; /* Subtle hover effect */
-            transform: translateY(-1px);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.08); /* More subtle shadow */
-        }
-        
-        .skill-item i {
-            color: #7a8288; /* Greyer icon color */
-            font-size: 1em; /* Adjusted icon size */
-        }
-        
-        /* Main content */
-        .page {
-            width: 100%;
-        }
-        
-        .page__inner-wrap {
-            width: 100%;
-        }
-        
-        .page__content {
-            margin-bottom: 3em;
-        }
-        
-        .page__content h1 {
-            margin-top: 0;
-            font-size: 1.5em; /* Adjusted font size */
-            color: #494e52;
-        }
-        
-        .page__content h2 {
-            margin-top: 2em;
-            margin-bottom: 0.5em;
-            font-size: 1.15em; /* Adjusted font size */
-            color: #494e52;
-            padding-bottom: 0.4em; /* Slightly less padding */
-            border-bottom: 1px solid #f2f3f3;
-            font-weight: 600; /* Bolder h2 */
-        }
-        
-        .page__content h2:first-child {
-            margin-top: 0;
-        }
-        
-        .page__content p {
-            margin-bottom: 1.3em;
-            text-align: justify;
-            font-size: 0.95em; /* Slightly smaller paragraph font */
-        }
-        
-        .page__content ul {
-            margin-bottom: 1.3em;
-            padding-left: 1.5em;
-        }
-        
-        .page__content li {
-            margin-bottom: 0.5em;
-        }
-        
-        .page__content a {
+        .contact-links a {
             color: #007cba;
             text-decoration: none;
-            transition: color 0.2s;
+            font-weight: 500;
         }
         
-        .page__content a:hover {
-            color: #004d7a;
+        .contact-links a:hover {
             text-decoration: underline;
         }
         
-        .page__content a i {
-            margin-left: 0.3em;
-            font-size: 0.7em; /* Smaller external link icon */
-            vertical-align: super; /* Raise icon slightly */
-        }
-        
-        /* Social links */
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5em;
-            margin-top: 1em;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5em;
-            padding: 0.5em 1em;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 4px;
-            color: #494e52;
-            text-decoration: none;
-            font-size: 0.875em;
-            transition: all 0.2s;
-        }
-        
-        .social-links a:hover {
-            background: #007cba;
-            border-color: #007cba;
-            color: #fff;
-            transform: translateY(-1px);
-        }
-        
-        .social-links a i {
-            font-size: 1.1em;
-        }
-        
-        /* Footer */
-        .page__footer {
-            margin-top: 3em;
-            padding: 2em 0;
-            border-top: 1px solid #f2f3f3;
-            background: #f8f9fa;
-        }
-        
-        .page__footer-follow {
-            max-width: 960px; /* Adjusted to match content width */
-            margin: 0 auto;
-            padding: 0 1em;
-        }
-        
-        .page__footer-follow ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        
-        .page__footer-follow li strong {
-            font-size: 0.85em; /* Smaller "Follow" text */
-            color: #7a8288;
-        }
-        
-        .page__footer-follow a {
-            color: #494e52;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            font-size: 0.85em; /* Smaller font for footer links */
-        }
-        
-        .page__footer-follow a:hover {
-            color: #007cba;
-        }
-        
-        .page__footer-follow a i {
-            font-size: 1em; /* Adjusted icon size */
-        }
-        
-        .page__footer-copyright {
-            max-width: 960px; /* Adjusted to match content width */
-            margin: 1em auto 0;
-            padding: 0 1em;
-            font-size: 0.75em; /* Smaller copyright text */
-            color: #7a8288;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            #main {
-                grid-template-columns: 1fr;
-                grid-gap: 2em;
-                margin-top: 0;
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
             }
             
-            .sidebar {
-                position: static;
-                order: -1;
-                padding-right: 0; /* Remove padding for mobile */
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
             }
             
-.author__avatar {
-    text-align: center;
-    width: 100%;
-    max-width: 120px;
-    margin: 0 auto 1em auto;
-}
-
-            
-          .author__avatar img {
-    margin: 0 auto;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;      /* Ensures image fills square shape without distortion */
-    aspect-ratio: 1 / 1;    /* Explicitly enforces square aspect */
-    border-radius: 50%;     /* Optional: makes it circular */
-    display: block;
-}
-
-            
-            .author__content {
+            .project-links a {
                 display: block;
-                text-align: center;
-                padding: 0;
-            }
-            
-            .author__urls-wrapper {
+                margin-bottom: 10px;
+                margin-right: 0;
                 text-align: center;
             }
-            
-            .author__urls {
-                position: static;
-                width: auto; /* Allow width to be determined by content or parent */
-                margin-top: 10px;
-                left: auto; /* Reset left/right for static positioning */
-                right: auto;
-            }
-
-            .author__urls:before,
-            .author__urls:after {
-                display: none;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .greedy-nav .visible-links {
-                display: flex; /* Keep flex for horizontal scroll/wrap */
-                flex-wrap: wrap; /* Allow wrapping */
-                justify-content: center; /* Center links if they wrap */
-                padding: 0 1em; /* Add padding to prevent links from touching edges */
-            }
-            
-            .greedy-nav .visible-links li {
-                margin: 0.5em 1em; /* Adjust margins for wrapped items */
-            }
-
-            .greedy-nav .visible-links li:first-child {
-                margin-left: 1em; /* Ensure first item also has margin */
-            }
-
-            .masthead__menu-item--lg {
-                margin-right: auto; /* Push the name to the left */
-            }
-        }
-        
-        /* Animations */
-        .page {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* JavaScript toggle functionality */
-        .js .author__urls {
-            display: none;
-        }
-        
-        .author__urls button {
-            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
-    <div class="masthead">
-        <div class="masthead__inner-wrap">
-            <div class="masthead__menu">
-                <nav id="site-nav" class="greedy-nav">
-                    <ul class="visible-links">
-                        <li class="masthead__menu-item masthead__menu-item--lg">
-                            <a href="#about">Divyansh</a>
-                        </li>
-                        <li class="masthead__menu-item">
-                            <a href="#projects">Projects</a>
-                        </li>
-                        <li class="masthead__menu-item">
-                            <a href="#blog">Blog</a>
-                        </li>
-                        <li class="masthead__menu-item">
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+    <h1>Divyansh</h1>
+    <p>dvnsh.work@gmail.com | +91 6378918236</p>
+
+
     
-    <div id="main" role="main">
-        <div class="sidebar sticky">
-            <div itemscope itemtype="http://schema.org/Person">
-                <div class="author__avatar">
-                    <img src="i.jpg" alt="Divyansh">
-                </div>
-                <div class="author__content">
-                    <h3 class="author__name">Divyansh</h3>
-                </div>
-            </div>
-        </div>
-        
-        <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-            <div class="page__inner-wrap">
-                <section class="page__content" itemprop="text">
-                    <h1 id="about">About Me</h1>
-                    <p>Hello!</p>
-                    <p>
-                        Hi, I'm a CS student with a love for technology . 
-                        I enjoy exploring various aspects of computers, and different things in life.
-                        and I'm always eager to learn new things, technologies and work on interesting projects.
-                    </p>
-
-                    <h2>Academic Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-laptop-code"></i>
-                            Web Development
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-music"></i>
-                            AutoCad & Ansys
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cogs"></i>
-                            Compilers
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            Algorithms & Data Structures
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            Machine Learning Algorithms
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-calculator"></i>
-                            Linear Algebra & Engineering Maths
-                        </div>
-                    </div>
-                    
-
-                    <h2>Hobbies & Interests</h2>
-                    <div class = "skills-grid">
-                        <div class ="skill-item>
-                            <i class="fa-solid fa-headphones"></i>
-                            EDM Producer
-                        </div>
-                        <div class ="skill-item>
-                          <i class="fa-solid fa-person-hiking"></i> 
-                            Hikes and Trekks 
-                        </div>
-                    </div>
-                     <h2 id="projects">Projects</h2>
-                    <p>
-                        I'm have worked on various projects that combine my interests & real-world applications. 
-                        One them is this <a href="https://vanshavli.github.io/v/" target="_blank">ancestry calculator specifically designed for South Asians<i class="fas fa-external-link-alt"></i></a>, 
-                    </p>
-                    
-                    <h2 id="blog">Blog</h2>
-                    <p>
-                        I occasionally write about my experiences <a href="https://devkvt.blogspot.com/" target="_blank">here<i class="fas fa-external-link-alt"></i></a>
-                    </p>
-                    
-                    <h2 id="contact">Connect</h2>
-                    <p>
-                        I'm always open to new opportunities , feel free to connect .
-                    </p>
-                    
-                    <div class="social-links">
-                        <a href="https://github.com/devkvt23" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://twitter.com/_devkvt" target="_blank">
-                            <i class="fab fa-twitter"></i> Twitter
-                        </a>
-                        <a href="https://www.linkedin.com/in/devkvt/" target="_blank">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://instagram.com/devkvt" target="_blank">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="https://mastodon.social/@devkvt" target="_blank">
-                           <i class="fab fa-mastodon"></i> Mastodon
-                        </a>
-                         <a href="https://soundcloud.com/devkvt" target="_blank">
-                         <i class="fab fa-soundcloud"></i> SoundCloud
-                        </a>
-
-                    </div>
-                </section>
-            </div>
-        </article>
-    </div>
+    <h3>Web Development</h3>
+    <ul>
+        <li>Express.js</li>
+        <li>Node.js</li>
+        <li>React</li>
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>MongoDB</li>
+        <li>PostgreSQL</li>
+    </ul>
     
-    <div class="page__footer">
-        <div class="page__footer-follow">
-            <ul class="social-icons">
-                <li><strong>Follow:</strong></li>
-                <li>
-                    <a href="https://twitter.com/_devkvt">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/devkvt23">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://devkvt23.github.io/b/">
-                        <i class="fas fa-rss"></i> Blog
-                    </a>
-                </li>
-                <li>                            <a href="https://mastodon.social/@devkvt" target="_blank">
-        <i class="fab fa-mastodon"></i> Mastodon
-    </a>
-
-</li>
-            </ul>
-        </div>
-        <div class="page__footer-copyright">
-            © 2025  
-        </div>
-    </div>
+    <h3>Programming Languages</h3>
+    <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+    </ul>
     
-    <script>
-        function toggleUrls() {
-            const urls = document.getElementById('author-urls');
-            urls.classList.toggle('is--visible');
-        }
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const urls = document.getElementById('author-urls');
-            const button = event.target.closest('.btn--inverse');
-            
-            if (!button && urls.classList.contains('is--visible') && !urls.contains(event.target)) {
-                urls.classList.remove('is--visible');
-            }
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <h3>Tools & Technologies</h3>
+    <ul>
+        <li>Git/GitHub</li>
+        <li>Docker</li>
+        <li>Linux</li>
+        <li>RESTful APIs</li>
+        <li>GraphQL</li>
+        <li>AWS</li>
+    </ul>
+
+    
+    <p>
+        <a href="https://github.com/dev-kvt" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/devkvt/" target="_blank">LinkedIn</a> |
+        <a href="https://twitter.com/_devkvt" target="_blank">Twitter</a> |
+        <a href="https://mastodon.social/@devkvt" target="_blank">Mastodon</a> |
+        <a href="https://soundcloud.com/devkvt" target="_blank">SoundCloud</a>
+    </p>
 </body>
-</html>
+</html>        }
