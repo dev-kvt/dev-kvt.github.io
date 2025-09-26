@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome on Divyansh Singh</title>
+    <title>Home on Divyansh Singh</title>
     <link>https://dev-kvt.github.io/</link>
-    <description>Recent content in Welcome on Divyansh Singh</description>
+    <description>Recent content in Home on Divyansh Singh</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://dev-kvt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev-kvt.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Projects</title>
       <link>https://dev-kvt.github.io/projects/</link>
