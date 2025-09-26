@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome on Divyansh Singh</title>
+    <link>https://dev-kvt.github.io/</link>
+    <description>Recent content in Welcome on Divyansh Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://dev-kvt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Projects</title>
+      <link>https://dev-kvt.github.io/projects/</link>
+      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://dev-kvt.github.io/projects/</guid>
+      <description>My Projects 1. Vanshavli Description: Genetic Ancestry Calculator for South Asians.
+Live Demo: vanshavli.github.io/v
+Repo: GitHub - Vanshavli
+2. EGLAF Description: File Type Counter.
+Repo / Demo: Codeberg - EGLAF</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://dev-kvt.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dev-kvt.github.io/about/</guid>
+      <description>Skills &amp;amp; Technologies Web Development Express.js - Backend framework for Node.js applications Node.js - JavaScript runtime for server-side development React - Frontend JavaScript library for building user interfaces HTML/CSS - Markup and styling languages for web development JavaScript - Core programming language for web development MongoDB - NoSQL database for scalable applications PostgreSQL - Relational database management system Programming Languages Python - Versatile programming language for various applications Java - Object-oriented programming language C++ - Systems programming and performance-critical applications JavaScript - Frontend and backend web development TypeScript - Statically typed superset of JavaScript Tools &amp;amp; Technologies Git/GitHub - Version control and collaborative development Docker - Containerization and deployment Linux - Operating system and server administration RESTful APIs - Web service architecture GraphQL - Query language for APIs AWS - Cloud computing services Contact Information 📧 Email: dvnsh.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://dev-kvt.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dev-kvt.github.io/contact/</guid>
+      <description>Get In Touch I&amp;rsquo;m always interested in hearing about new opportunities, collaboration on exciting projects.
+Contact Information 📧 Email: dvnsh.work@gmail.com
+📱 Phone: +91 6378918236
+Connect With Me 🐙 GitHub: dev-kvt 💼 LinkedIn: devkvt 🐦 Twitter: @_devkvt 🐘 Mastodon: @devkvt 🎵 SoundCloud: devkvt What I&amp;rsquo;m Looking For Full-stack development opportunities Open source collaboration Interesting technical challenges Networking with fellow developers Feel free to reach out through any of these channels. I typically respond within 24 hours!</description>
+    </item>
+    
+  </channel>
+</rss>
