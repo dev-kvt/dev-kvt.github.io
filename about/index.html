@@ -1,53 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About | Divyansh</title>
+  <meta charset="UTF-8">
+  <title>About | Divyansh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+    }
+    nav {
+      padding: 1rem;
+      background: rgba(0,0,0,0.7);
+      position: relative;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    #particles-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-<nav>
-<a href="/">Home</a> |
-<a href="/about/">About</a> |
-<a href="/projects/">Projects</a> |
-<a href="/contact/">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/about/">About</a> |
+    <a href="/projects/">Projects</a> |
+    <a href="/contact/">Contact</a>
+  </nav>
 
+  <!-- About Content -->
+  <section>
+    <h1>About</h1>
+    <div>
+      <h2 id="skills--technologies">Skills &amp; Technologies</h2>
+      <h3 id="web-development">Web Development</h3>
+      <ul>
+        <li><strong>Express.js</strong> - Backend framework for Node.js applications</li>
+        <li><strong>Node.js</strong> - JavaScript runtime for server-side development</li>
+        <li><strong>React</strong> - Frontend JavaScript library for building user interfaces</li>
+        <li><strong>HTML/CSS</strong> - Markup and styling languages for web development</li>
+        <li><strong>JavaScript</strong> - Core programming language for web development</li>
+        <li><strong>MongoDB</strong> - NoSQL database for scalable applications</li>
+        <li><strong>PostgreSQL</strong> - Relational database management system</li>
+      </ul>
+      <h3 id="programming-languages">Programming Languages</h3>
+      <ul>
+        <li><strong>Python</strong> - Versatile programming language for various applications</li>
+        <li><strong>Java</strong> - Object-oriented programming language</li>
+        <li><strong>C++</strong> - Systems programming and performance-critical applications</li>
+        <li><strong>JavaScript</strong> - Frontend and backend web development</li>
+        <li><strong>TypeScript</strong> - Statically typed superset of JavaScript</li>
+      </ul>
+      <h3 id="tools--technologies">Tools &amp; Technologies</h3>
+      <ul>
+        <li><strong>Git/GitHub</strong> - Version control and collaborative development</li>
+        <li><strong>Docker</strong> - Containerization and deployment</li>
+        <li><strong>Linux</strong> - Operating system and server administration</li>
+        <li><strong>RESTful APIs</strong> - Web service architecture</li>
+        <li><strong>GraphQL</strong> - Query language for APIs</li>
+        <li><strong>AWS</strong> - Cloud computing services</li>
+      </ul>
+      <h2 id="contact-information">Contact Information</h2>
+      <p>📧 <strong>Email:</strong> <a href="mailto:dvnsh.work@gmail.com">dvnsh.work@gmail.com</a><br>
+      📱 <strong>Phone:</strong> +91 6378918236</p>
+    </div>
+  </section>
 
-<h1>About</h1>
-<div>
-<h2 id="skills--technologies">Skills &amp; Technologies</h2>
-<h3 id="web-development">Web Development</h3>
-<ul>
-<li><strong>Express.js</strong> - Backend framework for Node.js applications</li>
-<li><strong>Node.js</strong> - JavaScript runtime for server-side development</li>
-<li><strong>React</strong> - Frontend JavaScript library for building user interfaces</li>
-<li><strong>HTML/CSS</strong> - Markup and styling languages for web development</li>
-<li><strong>JavaScript</strong> - Core programming language for web development</li>
-<li><strong>MongoDB</strong> - NoSQL database for scalable applications</li>
-<li><strong>PostgreSQL</strong> - Relational database management system</li>
-</ul>
-<h3 id="programming-languages">Programming Languages</h3>
-<ul>
-<li><strong>Python</strong> - Versatile programming language for various applications</li>
-<li><strong>Java</strong> - Object-oriented programming language</li>
-<li><strong>C++</strong> - Systems programming and performance-critical applications</li>
-<li><strong>JavaScript</strong> - Frontend and backend web development</li>
-<li><strong>TypeScript</strong> - Statically typed superset of JavaScript</li>
-</ul>
-<h3 id="tools--technologies">Tools &amp; Technologies</h3>
-<ul>
-<li><strong>Git/GitHub</strong> - Version control and collaborative development</li>
-<li><strong>Docker</strong> - Containerization and deployment</li>
-<li><strong>Linux</strong> - Operating system and server administration</li>
-<li><strong>RESTful APIs</strong> - Web service architecture</li>
-<li><strong>GraphQL</strong> - Query language for APIs</li>
-<li><strong>AWS</strong> - Cloud computing services</li>
-</ul>
-<h2 id="contact-information">Contact Information</h2>
-<p>📧 <strong>Email:</strong> <a href="mailto:dvnsh.work@gmail.com">dvnsh.work@gmail.com</a><br>
-📱 <strong>Phone:</strong> +91 6378918236</p>
+  <!-- Container for Particles -->
+  <div id="particles-container"></div>
 
-</div>
+  <!-- Importmap with CDN -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
 
+  <script type="module">
+    import * as THREE from 'three';
+
+    let camera, scene, renderer, parameters;
+    let mouseX = 0, mouseY = 0;
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
+    const materials = [];
+
+    init();
+
+    function init() {
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
+      camera.position.z = 1000;
+
+      scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x000000, 0.0008);
+
+      const geometry = new THREE.BufferGeometry();
+      const vertices = [];
+
+      const textureLoader = new THREE.TextureLoader();
+      const assignSRGB = (texture) => { texture.colorSpace = THREE.SRGBColorSpace; };
+
+      const sprite1 = textureLoader.load('https://threejs.org/examples/textures/sprites/snowflake1.png', assignSRGB);
+      const sprite2 = textureLoader.load('https://threejs.org/examples/textures/sprites/snowflake2.png', assignSRGB);
+      const sprite3 = textureLoader.load('https://threejs.org/examples/textures/sprites/snowflake3.png', assignSRGB);
+      const sprite4 = textureLoader.load('https://threejs.org/examples/textures/sprites/snowflake4.png', assignSRGB);
+      const sprite5 = textureLoader.load('https://threejs.org/examples/textures/sprites/snowflake5.png', assignSRGB);
+
+      for (let i = 0; i < 10000; i++) {
+        const x = Math.random() * 2000 - 1000;
+        const y = Math.random() * 2000 - 1000;
+        const z = Math.random() * 2000 - 1000;
+        vertices.push(x, y, z);
+      }
+
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+      parameters = [
+        [[1.0, 0.2, 0.5], sprite2, 20],
+        [[0.95, 0.1, 0.5], sprite3, 15],
+        [[0.90, 0.05, 0.5], sprite1, 10],
+        [[0.85, 0, 0.5], sprite5, 8],
+        [[0.80, 0, 0.5], sprite4, 5]
+      ];
+
+      for (let i = 0; i < parameters.length; i++) {
+        const color = parameters[i][0];
+        const sprite = parameters[i][1];
+        const size = parameters[i][2];
+
+        materials[i] = new THREE.PointsMaterial({
+          size: size,
+          map: sprite,
+          blending: THREE.AdditiveBlending,
+          depthTest: false,
+          transparent: true
+        });
+        materials[i].color.setHSL(color[0], color[1], color[2], THREE.SRGBColorSpace);
+
+        const particles = new THREE.Points(geometry, materials[i]);
+        particles.rotation.x = Math.random() * 6;
+        particles.rotation.y = Math.random() * 6;
+        particles.rotation.z = Math.random() * 6;
+
+        scene.add(particles);
+      }
+
+      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.getElementById('particles-container').appendChild(renderer.domElement);
+
+      document.body.style.touchAction = 'none';
+      document.body.addEventListener('pointermove', onPointerMove);
+
+      window.addEventListener('resize', onWindowResize);
+      animate();
+    }
+
+    function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function onPointerMove(event) {
+      if (event.isPrimary === false) return;
+      mouseX = event.clientX - windowHalfX;
+      mouseY = event.clientY - windowHalfY;
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      render();
+    }
+
+    function render() {
+      const time = Date.now() * 0.00005;
+      camera.position.x += (mouseX - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+
+      for (let i = 0; i < scene.children.length; i++) {
+        const object = scene.children[i];
+        if (object instanceof THREE.Points) {
+          object.rotation.y = time * (i < 4 ? i + 1 : -(i + 1));
+        }
+      }
+
+      for (let i = 0; i < materials.length; i++) {
+        const color = parameters[i][0];
+        const h = (360 * (color[0] + time) % 360) / 360;
+        materials[i].color.setHSL(h, color[1], color[2], THREE.SRGBColorSpace);
+      }
+
+      renderer.render(scene, camera);
+    }
+  </script>
 </body>
 </html>
