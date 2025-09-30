@@ -4,7 +4,34 @@
   <meta charset="UTF-8">
   <title>Home | Divyansh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="text/css" rel="stylesheet" href="main.css">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+    }
+    nav {
+      padding: 1rem;
+      background: rgba(0,0,0,0.7);
+      position: relative;
+      z-index: 10;
+    }
+    section {
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    #ascii-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -22,20 +49,20 @@
     <p><em>More:</em> <a href="/about/">About</a> | <a href="/projects/">Projects</a> | <a href="/contact/">Contact</a></p>
   </section>
 
-  <!-- Three.js ASCII Effect -->
-  <div id="info">
-    <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - effects - ascii
-  </div>
+  <!-- Container for ASCII effect -->
+  <div id="ascii-container"></div>
 
+  <!-- Importmap with CDN -->
   <script type="importmap">
-    {
-      "imports": {
-        "three": "../build/three.module.js",
-        "three/addons/": "./jsm/"
-      }
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
     }
+  }
   </script>
 
+  <!-- Three.js ASCII Demo -->
   <script type="module">
     import * as THREE from 'three';
     import { AsciiEffect } from 'three/addons/effects/AsciiEffect.js';
@@ -80,7 +107,8 @@
       effect.domElement.style.color = 'white';
       effect.domElement.style.backgroundColor = 'black';
 
-      document.body.appendChild(effect.domElement);
+      // attach into container
+      document.getElementById('ascii-container').appendChild(effect.domElement);
 
       controls = new TrackballControls(camera, effect.domElement);
       window.addEventListener('resize', onWindowResize);
@@ -104,4 +132,5 @@
   </script>
 </body>
 </html>
+
 
