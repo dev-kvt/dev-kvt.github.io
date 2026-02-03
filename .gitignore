@@ -1,1 +1,6 @@
+_site
+.jekyll-cache
+.jekyll-metadata
+Gemfile.lock
+resume.pdf
 Divyansh Singh.pdf
