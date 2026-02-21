@@ -12,8 +12,7 @@ entries:
       - title: tech stack
         url: /stack/
   
-
-  - title: writing/builds
+  - title: writing
     post_list:
       limit: 5
       show_more: true
