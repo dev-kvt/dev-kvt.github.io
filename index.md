@@ -1,8 +1,11 @@
 ---
 layout: home
 ---
+Hi 👋 <br>
+I am Backend Engineer working on and learning Distributed Systems.
+I am 21 year old 
 
-Backend Engineer specialized in Distributed Systems.
 
 
- Posts : {{ site.posts | size }}
+📝: {{ site.posts | size }}
+

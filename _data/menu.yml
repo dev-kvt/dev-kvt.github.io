@@ -13,11 +13,9 @@ entries:
         url: /stack/
   
   - title: writing
-    post_list:
-      limit: 5
-      show_more: true
-      show_more_text: full archive...
-      show_more_url: /archive/
+    entries:
+      - title: webservers
+        url: /webservers/
 
   - title: leetcode
     url: http://leetcode.com/u/dev-kvt
