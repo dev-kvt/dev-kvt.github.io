@@ -77,7 +77,7 @@ function App() {
   }, [theme]);
 
   const resumeUrl = `${import.meta.env.BASE_URL}${SITE.resumePath}`;
-  const heatmapUrl = `https://ghchart.rshah.org/${theme === 'dark' ? '6c8cff' : 'ff8e3c'}/devkvt`;
+  const heatmapUrl = `https://ghchart.rshah.org/${theme === 'dark' ? '6c8cff' : 'ff8e3c'}/${SITE.github}`;
 
   return (
     <div className="page">
@@ -173,9 +173,14 @@ function App() {
           >
             <div className="heatmap-header">
               <p className="muted">Live contribution activity from GitHub.</p>
-              <a className="icon-link subtle" href="https://github.com/dev-kvt" target="_blank" rel="noreferrer">
+              <a
+                className="icon-link subtle"
+                href={`https://github.com/${SITE.github}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IconGitHub className="icon" />
-                <span>github.com/dev-kvt</span>
+                <span>github.com/{SITE.github}</span>
               </a>
             </div>
             <div className="heatmap-wrap">
