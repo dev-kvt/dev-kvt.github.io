@@ -17,6 +17,14 @@ export const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "Divyansh Singh",
   description: "",
+  icons:{
+    icon:"/favicon.png",
+    apple:"/favicon.png",
+    other:{
+      rel:"apple-touch-icon-precomposed",
+      url:"/favicon.png"
+    }
+  }
 };
 
 export default function RootLayout({
