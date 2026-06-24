@@ -1,4 +1,3 @@
-```md
 # Hi, I'm Divyansh
 
 I am a computer science student based in New Delhi, India.
@@ -15,4 +14,3 @@ I enjoy learning, building projects, and exploring machine learning and AI syste
 - GitHub: https://github.com/dev-kvt
 - LinkedIn: https://linkedin.com/in/devkvt
 - Resume: https://drive.google.com/file/d/1rdMddhaK3R7HG0L4jRUTeqDFnrEA8CTo/view?usp=share_link
-```
