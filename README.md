@@ -1,6 +1,3 @@
-#  👋 
-
-I am from 🇮🇳.
 
 I enjoy learning, building projects, and exploring machine learning and AI systems. I am learning about software engineering, data structures and algorithms, and modern AI technologies.
 
@@ -18,7 +15,6 @@ I enjoy learning, building projects, and exploring machine learning and AI syste
 - [GitHub](https://github.com/dev-kvt)
 - [LinkedIn](https://linkedin.com/in/devkvt)
 - [Resume](https://drive.google.com/file/d/1rdMddhaK3R7HG0L4jRUTeqDFnrEA8CTo/view?usp=share_link)
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=What+was%2C+is%2C+and+will+be." alt="Typing SVG" /></a>
 
 <br/>
 
@@ -30,6 +26,7 @@ I enjoy learning, building projects, and exploring machine learning and AI syste
 </div>
 
 ---
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=What+was%2C+is%2C+and+will+be." alt="Typing SVG" /></a>
 
 
 
