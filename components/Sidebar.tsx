@@ -13,15 +13,15 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed top-0 left-0 w-full h-16 md:h-screen md:w-[220px] bg-[#fafafa] flex flex-row md:flex-col items-center md:items-start justify-between md:justify-center px-6 md:px-0 md:pl-12 z-40 border-b md:border-b-0 border-gray-100">
+    <aside className="fixed top-0 left-0 w-full h-16 md:h-screen md:w-[220px] bg-[#fafafa] flex flex-row md:flex-col items-center md:items-start justify-center px-4 md:px-0 md:pl-12 z-40 border-b md:border-b-0 md:border-r border-gray-100">
       
       {/* Optional Logo/Brand area placeholder */}
-      <div className="font-medium text-[#333] hidden sm:block md:block md:mb-4">
+      <div className="font-medium text-[#333] hidden md:block md:mb-4">
         {/* Logo content here if needed */}
       </div>
 
-      <nav aria-label="Main Navigation" className="w-full md:w-auto flex justify-end md:justify-start">
-        <ul className="flex flex-row md:flex-col space-x-6 md:space-x-0 md:space-y-[20px]">
+      <nav aria-label="Main Navigation" className="w-full md:w-auto flex justify-center md:justify-start">
+        <ul className="flex flex-row md:flex-col space-x-8 md:space-x-0 md:space-y-[20px]">
           {navItems.map((item) => {
             const isActive = pathname === item.path;
             const isExternal = item.path.startsWith("http");

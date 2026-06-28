@@ -37,9 +37,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${merriweather.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex bg-white">
+      <body className="min-h-full bg-white">
         <Sidebar />
-        <main className="flex-1 ml-[220px] relative min-h-screen">
+        <main className="md:ml-[220px] pt-16 md:pt-0 relative min-h-screen">
           {children}
         </main>
       </body>

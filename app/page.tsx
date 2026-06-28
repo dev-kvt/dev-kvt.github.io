@@ -3,7 +3,7 @@ import { merriweather } from "./layout";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-8">
+    <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex flex-col items-center justify-center text-center px-4 py-8">
 
       {/* Fixed: <div> instead of <h1> wrapping an image */}
       <div className="mb-6">
